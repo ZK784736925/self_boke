@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>{{ article.title | safe}}</h1><br>
+    创建时间:{{ article.create_time | safe }}  最后一次修改时间:{{ article.update_time | safe }}<br>
+    {{ article.content |safe }}<br>
+    <a href="{{ url_for("editup", blog_id=article.id) }}">修改</a><br>
+    <a href="{{ url_for("delete_blog", blog_id=article.id) }}">删除</a>
+</body>
+</html>

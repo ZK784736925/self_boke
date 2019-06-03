@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {{ username }}<br>
+    <form action="/search" method="post" name="sou">
+        <input type = "hidden" name = "csrf_token" value = "{{ csrf_token() }}">
+        <input type="text" name="search"><input type="submit" value="搜索">
+    </form><br>
+    <a href="{{ url_for("editor") }}">写博客</a><br>
+    {% for art in article %}
+        <h2><a href="{{ url_for("blogll", blog_id=art.id) }}">{{ art.title | safe }}</a></h2><br>
+        创建时间:{{ art.create_time | safe }}   最后一次修改时间:{{ art.update_time | safe }}<br>
+        {{ (art.content | striptags)[:50] }}<br><hr>
+    {% endfor %}
+
+
+
+
+</body>
+</html>

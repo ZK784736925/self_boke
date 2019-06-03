@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="login" method="post" name="login">
+    {{ lform.csrf_token() }}
+    {{ lform.username.label }}:{{ lform.username }}<br>
+    {{ lform.password.label }}:{{ lform.password }}<br>
+    {{ lform.submit }}
+</form>
+<hr>
+<form action="register" method="post" name="regiser">
+    {{ rform.csrf_token() }}
+    {{ rform.username.label }}:{{ rform.username }}<br>
+    {{ rform.password.label }}:{{ rform.password }}<br>
+    {{ rform.password2.label }}:{{ rform.password2 }}<br>
+    {{ rform.submit2 }}
+</form>
+
+
+
+</body>
+</html>
